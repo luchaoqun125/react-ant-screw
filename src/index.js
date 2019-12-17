@@ -1,15 +1,13 @@
-import React from 'react';
-import styles from './index.css';
+import ScForm from './form'
+import ScTable from './table'
+import ScList from './list'
+import ScModal from './modal'
+import ScSpin from './spin'
 
-export default function(props) {
-  return (
-    <button
-      className={styles.button}
-      style={{
-        fontSize: props.size === 'large' ? 40 : 20,
-      }}
-    >
-      { props.children }
-    </button>
-  );
+export {
+  ScForm,
+  ScTable,
+  ScList,
+  ScModal,
+  ScSpin
 }

@@ -11,6 +11,7 @@
   "repository": "https://github.com/luchaoqun125/react-ant-screw.git/react-ant-screw",
   "scripts": {
     "dev": "father doc dev",
+    "start": "father doc dev",
     "build": "father build"
   },
   "peerDependencies": {
@@ -19,5 +20,11 @@
   "devDependencies": {
     "father": "^2.16.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^3.26.3",
+    "lodash": "^4.17.15",
+    "prop-type": "0.0.1",
+    "react-dom": "^16.12.0"
+  }
 }

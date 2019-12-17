@@ -1,0 +1,21 @@
+---
+name: ScList
+route: /ScList
+order: 3
+sidebar: true
+---
+
+import { ScList } from '../src';
+import { formConfig } from './form.config.js'
+import { tableConfig } from './table.config.js'
+import 'antd/dist/antd.css';
+formConfig.props.layout = 'inline'
+const options = {
+  formConfig,
+  tableConfig,
+  onMount: (list) => { console.log(list) }
+}
+
+# ScList Component
+
+<ScList {...options}></ScList>

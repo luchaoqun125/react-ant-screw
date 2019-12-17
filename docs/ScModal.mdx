@@ -1,0 +1,41 @@
+---
+name: ScModal
+route: /ScModal
+order: 2
+sidebar: true
+---
+
+import { ScModal, ScForm } from '../src';
+import { Button } from 'antd'
+import 'antd/dist/antd.css';
+import { formConfig } from './form.config.js'
+const modalConfig = () => {
+  let newForm
+  const setMount= (leForm) => {
+    newForm = leForm
+  }
+  return {
+    title: '弹框改造',
+    closable: false,
+    width: 900,
+    content: () => {
+      return <ScForm {...formConfig} onMount={(leForm)=>setMount(leForm) }/>
+    },
+    onOk: (onCancel) => {
+      newForm.validateFields((err, values) => {
+        console.log(err, values)
+        // onCancel()
+      })
+    }
+  }
+}
+function modalHandle() {
+  const modalInstance = ScModal(modalConfig)
+  setTimeout(() => {
+    modalInstance.destroy()
+  }, 3*1000);
+}
+
+# ScModal Component
+
+<Button onClick={() => modalHandle()}>点击Modal</Button>
