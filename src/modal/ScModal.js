@@ -2,11 +2,10 @@
  * @Description: 
  * @Author: 鲁大师
  * @Date: 2019-12-16 21:05:08
- * @LastEditors: 鲁大师
- * @LastEditTime: 2019-12-16 21:06:10
+ * @LastEditors  : 鲁大师
+ * @LastEditTime : 2019-12-28 17:42:17
  */
 import React, { Component } from 'react'
-import * as ReactDOM from 'react-dom'
 import { Modal } from 'antd'
 
 class ScModal extends Component {

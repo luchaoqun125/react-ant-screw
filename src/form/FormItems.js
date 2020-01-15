@@ -2,8 +2,8 @@
  * @Description: TODO:组件展示
  * @Author: 鲁大师
  * @Date: 2019-09-28 10:59:31
- * @LastEditors: 鲁大师
- * @LastEditTime: 2019-12-16 21:57:20
+ * @LastEditors  : 鲁大师
+ * @LastEditTime : 2020-01-15 15:37:58
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -64,7 +64,7 @@ class FormItem extends Component {
       Element = item.id ? getFieldDecorator(item.id, item.formOptions)(
         previewEle
       ) : previewEle
-    } else if(item.id) {
+    } else if(item.id && ComponentEle) {
       // 有id，并且是ant的组件或者是自定义的组件可以获取value和onChange
       Element = getFieldDecorator(item.id, item.formOptions || {})(
         ComponentEle ? <ComponentEle {...item.props} /> : component
@@ -77,12 +77,18 @@ class FormItem extends Component {
       if(item.render) {
         Element = item.render(this.$allValue || {}, this.props.form)
       }
+      if(item.id) {
+        Element = getFieldDecorator(item.id, item.formOptions || {})(
+          Element
+        )
+      }
+
     } else {
       // 不支持的组件
       Element = AND_COMPONENTS.NoSupport
     }
 
-    const FormItem = component !== 'BaseItem' ? 
+    const FormItem = component !== 'BaseItem' ?
       <Form.Item key={itemId} {...item.formItem}>
         {
           this.renderFormItem(settings, Element)

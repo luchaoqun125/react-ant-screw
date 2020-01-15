@@ -2,10 +2,11 @@
  * @Description: 
  * @Author: 鲁大师
  * @Date: 2019-12-16 21:08:07
- * @LastEditors: 鲁大师
- * @LastEditTime: 2019-12-16 22:13:53
+ * @LastEditors  : 鲁大师
+ * @LastEditTime : 2019-12-28 17:42:02
  */
 import ScModal from './ScModal';
+import * as ReactDOM from 'react-dom'
 const IS_REACT_16 = !!ReactDOM.createPortal
 const destroyFns = []
 

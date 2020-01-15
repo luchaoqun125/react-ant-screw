@@ -393,6 +393,7 @@ const formConfig = {
     },
     {
       component: 'Item',
+      id: 'itemId',
       formItem: {
         label: 'Item',
       },
@@ -451,7 +452,7 @@ const formConfig = {
         type: 'primary',
         children: '确认点击',
         onClick: (error, values, leForm) => {
-          // console.log(error, values, leForm)
+          console.log(error, values, leForm)
           // console.log(leForm.getValues())
         }
       },

@@ -1,6 +1,6 @@
 {
-  "name": "react-ant-screw",
-  "version": "0.0.1",
+  "name": "react-antd-screw",
+  "version": "0.0.2",
   "description": "快速搭建一个页面的配置文件",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,8 +10,8 @@
   },
   "repository": "https://github.com/luchaoqun125/react-ant-screw.git/react-ant-screw",
   "scripts": {
-    "dev": "father doc dev",
-    "start": "father doc dev",
+    "dev": "father doc dev --watch",
+    "start": "father doc dev --watch",
     "build": "father build"
   },
   "peerDependencies": {
