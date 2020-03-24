@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: 鲁大师
  * @Date: 2019-09-16 09:39:23
- * @LastEditors: 鲁大师
- * @LastEditTime: 2019-12-17 09:41:38
+ * @LastEditors  : 鲁大师
+ * @LastEditTime : 2020-01-18 12:01:08
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -37,7 +37,6 @@ class ScTable extends Component {
       fetchParams: {},
       spinning: false
     }
-    
   }
 
   componentDidMount() {
@@ -45,14 +44,17 @@ class ScTable extends Component {
   }
 
   setTableConfig() {
-    let newProps = Object.assign({}, this.props)
-    let { onMount, settings={}, props={} } = newProps
+    const { onMount } = this.props
+    let newProps = null
+    if(onMount && typeof onMount === 'function') {
+      newProps = onMount(this.instanceApis, this)
+      if(!newProps) {
+        newProps = Object.assign({}, this.props)
+      }
+    }
+    let { settings={}, props={} } = newProps
     const { selectedRowKeys=[] } = settings
     const { rowSelection={} } = props
-
-    if(onMount && typeof onMount === 'function') {
-      onMount(this.instanceApis, this)
-    }
 
     if(_.isEmpty(rowSelection) === false) {
       props.rowSelection={
