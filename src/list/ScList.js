@@ -1,9 +1,9 @@
 /*
- * @Description: 
+ * @Description: form和table联动组件
  * @Author: 鲁大师
  * @Date: 2019-12-16 20:47:44
  * @LastEditors: 鲁大师
- * @LastEditTime: 2019-12-17 09:36:44
+ * @LastEditTime: 2020-03-27 15:50:56
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -12,15 +12,18 @@ import _ from 'lodash'
 
 class ScList extends Component {
   constructor(props) {
-    super(props) 
+    super(props)
     this.formInstance = null,
     this.tableInstance = null,
 
     this.state = {
-      formConfig: this.setFormConfig(this.props.formConfig),
+      formConfig: {
+        ...props.formConfig,
+        items: this.setFormConfig(props.formConfig)
+      },
       tableConfig: props.tableConfig,
     }
-    
+
     this.$ScList = null
   }
 
@@ -73,7 +76,7 @@ class ScList extends Component {
   }
 
   render() {
-    const { formConfig, tableConfig } = this.props
+    const { formConfig, tableConfig } = this.state
     return (
       <React.Fragment>
         <ScForm {...formConfig} onMount={formInstance => this.formInstance = formInstance}></ScForm>

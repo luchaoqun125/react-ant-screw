@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: 鲁大师
  * @Date: 2019-09-16 09:39:23
- * @LastEditors  : 鲁大师
- * @LastEditTime : 2020-01-18 12:01:08
+ * @LastEditors: 鲁大师
+ * @LastEditTime: 2020-03-27 14:52:19
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -53,15 +53,6 @@ class ScTable extends Component {
       }
     }
     let { settings={}, props={} } = newProps
-    const { selectedRowKeys=[] } = settings
-    const { rowSelection={} } = props
-
-    if(_.isEmpty(rowSelection) === false) {
-      props.rowSelection={
-        ...rowSelection,
-        selectedRowKeys
-      }
-    }
 
     return {
       settings,
@@ -237,10 +228,6 @@ class ScTable extends Component {
 
   render () {
     const { props, wrapItem, spinning, preload } = this.state
-    const { rowSelection=null } = props
-    if(rowSelection && typeof rowSelection === 'function') {
-      props.rowSelection = rowSelection(this)
-    }
     const TableEle = <ScSpin spin={{spinning, tip: '正在加载中...'}}>
       <Table 
         {...props}
@@ -275,8 +262,8 @@ ScTable.propTypes = {
 ScTable.defaultProps = {
   props: {},
   settings: {},
-  wrapItem: false,
-  preload: {},
+  wrapItem: false,  // 拖拽平台使用字段
+  preload: {},      // 推拽平台使用字段
   onMount: FN
 }
 

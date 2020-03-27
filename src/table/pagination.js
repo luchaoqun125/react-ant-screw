@@ -1,9 +1,9 @@
 /*
- * @Description: 
+ * @Description: pagination默认配置项
  * @Author: 鲁大师
  * @Date: 2019-10-24 15:21:16
  * @LastEditors: 鲁大师
- * @LastEditTime: 2019-10-24 15:21:19
+ * @LastEditTime: 2020-03-27 15:53:34
  */
 const paginationDefaultProps = (onChange, onShowSizeChange) => {
   return {

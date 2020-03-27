@@ -1,9 +1,9 @@
 /*
- * @Description: 
+ * @Description: form的常量
  * @Author: 鲁大师
  * @Date: 2019-10-15 14:31:08
  * @LastEditors: 鲁大师
- * @LastEditTime: 2019-11-06 11:06:43
+ * @LastEditTime: 2020-03-27 13:55:46
  */
 // TODO:处理样式显示格式
 const STATUS_CONST = {

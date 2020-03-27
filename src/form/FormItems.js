@@ -2,8 +2,8 @@
  * @Description: TODO:组件展示
  * @Author: 鲁大师
  * @Date: 2019-09-28 10:59:31
- * @LastEditors  : 鲁大师
- * @LastEditTime : 2020-01-15 17:08:17
+ * @LastEditors: 鲁大师
+ * @LastEditTime: 2020-03-27 13:59:12
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -108,13 +108,12 @@ class FormItem extends Component {
     }
   }
   /**
-   * @description: 
-   * @param {type} 
-   * @return: 
+   * @description: 为组件添加上下前后，说明文案功能
+   * @param settings:组件的设置参数Object，Element: formItem组件变量
+   * @return: 添加说明文案后的组件
    */
   renderFormItem(settings, Element) {
     const { top='',suffix='', prefix='', help='' } = settings
-    
     return (
       <>
         {
@@ -146,7 +145,7 @@ class FormItem extends Component {
     this.getAllValue('shouldComponentUpdate')
     return true
   }
-  
+
   getAllValue(type) {
     const value = this.props.form.getFieldsValue()
     this.$allValue = value
@@ -164,7 +163,6 @@ class FormItem extends Component {
     )
   }
 }
-
 
 FormItem.propTypes = {
   items: PropTypes.array,
