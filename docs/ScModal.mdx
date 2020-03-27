@@ -11,15 +11,15 @@ import 'antd/dist/antd.css';
 import { formConfig } from '../screwConfig/form.config.js'
 const modalConfig = () => {
   let newForm
-  const setMount= (leForm) => {
-    newForm = leForm
+  const setMount= (scForm) => {
+    newForm = scForm
   }
   return {
     title: '弹框改造',
     closable: false,
     width: 900,
     content: () => {
-      return <ScForm {...formConfig} onMount={(leForm)=>setMount(leForm) }/>
+      return <ScForm {...formConfig} onMount={(scForm)=>setMount(scForm) }/>
     },
     onOk: (onCancel) => {
       newForm.validateFields((err, values) => {
@@ -31,9 +31,7 @@ const modalConfig = () => {
 }
 function modalHandle() {
   const modalInstance = ScModal(modalConfig)
-  setTimeout(() => {
-    modalInstance.destroy()
-  }, 3*1000);
+  
 }
 
 # ScModal Component

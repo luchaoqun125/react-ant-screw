@@ -213,7 +213,7 @@ const formConfig = {
         }
       }
     },
-    (leForm) => ({
+    (scForm) => ({
       component: 'RadioGroup',
       id: 'RadioGroup1',
       formItem: {
@@ -227,7 +227,7 @@ const formConfig = {
         }, {
           label: '否',
           value: 0, 
-          disabled: leForm.getFieldValue('checkbox1') ? true : false
+          disabled: scForm.getFieldValue('checkbox1') ? true : false
         }]
       }
     }),
@@ -397,15 +397,15 @@ const formConfig = {
       formItem: {
         label: 'Item',
       },
-      render: (values, leForm) => {
-        // console.log(values, leForm)
+      render: (values, scForm) => {
+        // console.log(values, scForm)
         return <div>内容信息</div>
       }
     },
     {
       component: 'BaseItem',
-      render: (values, leForm) => {
-        // console.log(values, leForm)
+      render: (values, scForm) => {
+        // console.log(values, scForm)
         return <div>内容信息
           <Divider />
         </div>
@@ -440,7 +440,7 @@ const formConfig = {
       formItem: {
         style: {
           display: 'block',
-          textAlign: 'center'
+          // textAlign: 'center'
         }
       },
       settings: {
@@ -451,9 +451,9 @@ const formConfig = {
       props: {
         type: 'primary',
         children: '确认点击',
-        onClick: (error, values, leForm) => {
-          console.log(error, values, leForm)
-          // console.log(leForm.getValues())
+        onClick: (error, values, scForm) => {
+          console.log(error, values, scForm)
+          // console.log(scForm.getValues())
         }
       },
     },

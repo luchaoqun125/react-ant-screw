@@ -3,7 +3,7 @@
  * @Author: 鲁大师
  * @Date: 2019-12-16 20:47:44
  * @LastEditors: 鲁大师
- * @LastEditTime: 2020-03-27 15:50:56
+ * @LastEditTime: 2020-03-27 16:03:35
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -77,6 +77,7 @@ class ScList extends Component {
 
   render() {
     const { formConfig, tableConfig } = this.state
+    console.log(tableConfig)
     return (
       <React.Fragment>
         <ScForm {...formConfig} onMount={formInstance => this.formInstance = formInstance}></ScForm>
